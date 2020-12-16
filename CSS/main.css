@@ -1,0 +1,100 @@
+@import "layout.css";
+@import "header.css";
+@import "footer.css";
+
+.content-grid{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    gap: 30px;
+    justify-content: center;
+    grid-template-rows: 100px 400px ;
+    grid-template-areas: 
+    "hdr hdr hdr "
+    "con con con"
+    "con con con"; 
+}
+
+.content-box {
+   text-align: center;
+   grid-area: hdr;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    object-fit: cover;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    grid-area: con;
+    
+}
+
+
+.textblock {
+    position: absolute;
+    text-align: center;
+    bottom: 80px;
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    color: #f1f1f1;
+    width: 280px;
+    height: 100px;
+    padding:10px;
+    padding-bottom: 50px;
+  
+}
+
+
+
+@media screen and (max-width: 380px) {
+    .content-grid{
+        grid-template-columns:1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "hdr"
+        "con"
+        "con"; 
+    }
+    
+    .content-box {
+        grid-area: hdr;
+     }
+     .card {
+        grid-area: con; 
+        width: 100%; 
+    }
+
+    .textblock{
+      position: relative;
+      width: fit-content;
+      bottom: 300px;
+    }  
+}
+
+@media screen and (min-width: 381px) and (max-width:768px) {
+    .content-grid{
+        grid-template-columns:1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "hdr"
+        "con"
+        "con"; 
+    }
+    
+    .content-box {
+        grid-area: hdr;
+     }
+     .card {
+        grid-area: con; 
+        width: 100%; 
+    }
+
+    .textblock{
+      position: relative;
+      width: fit-content;
+      bottom: 300px;
+    }  
+}
+
+
+
